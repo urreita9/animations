@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  Dimensions,
-} from "react-native";
+import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import NavButton from "../components/NavButton";
 
 const WIDTH = Dimensions.get("window").width;
@@ -29,10 +23,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#272727",
   },
   image: {
-    width: WIDTH / 4,
-    height: WIDTH / 4,
+    width: WIDTH / 2,
+    height: WIDTH / 2,
     position: "absolute",
-    top: 40,
-    left: 40,
+    top: 100,
   },
 });
