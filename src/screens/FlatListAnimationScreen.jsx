@@ -8,8 +8,12 @@ const data = new Array(50).fill(0).map((_, index) => ({ id: index }));
 export const FlatListAnimationScreen = () => {
   const viewableItems = useSharedValue([]);
 
+  const onTap = () => {
+    console.log("tap");
+  };
+
   const renderItem = ({ item }) => (
-    <ListItemAnimated viewableItems={viewableItems} item={item} />
+    <ListItemAnimated viewableItems={viewableItems} item={item} onTap={onTap} />
   );
   const keyExtractor = (item) => item.id;
 
