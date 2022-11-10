@@ -3,8 +3,8 @@ import {
   FlatListAnimationScreen,
   HomeScreen,
   CircularProgressScreen,
+  BackgroundColorAnimationScreen,
 } from "../screens";
-import { useNavigation } from "@react-navigation/native";
 import { BLUE_COLOR, GREEN_COLOR } from "../utils/contants";
 
 const options = {
@@ -18,12 +18,6 @@ const options = {
 const Stack = createNativeStackNavigator();
 
 export const AnimationsNavigator = () => {
-  const navigation = useNavigation();
-
-  const backNavigation = () => {
-    navigation.goBack();
-  };
-
   return (
     <Stack.Navigator initialRouteName='HomeScreen'>
       <Stack.Screen
@@ -40,6 +34,11 @@ export const AnimationsNavigator = () => {
         name='CircularProgressScreen'
         component={CircularProgressScreen}
         options={options}
+      />
+      <Stack.Screen
+        name='BackgroundColorAnimationScreen'
+        component={BackgroundColorAnimationScreen}
+        options={{ ...options }}
       />
     </Stack.Navigator>
   );
